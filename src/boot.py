@@ -1,8 +1,7 @@
 import senko
 import machine
-import network
 
-GITHUBURL = "https://github.com/Mafreke/baron1898/blob/master/src/"
+import connectwlan
 
 OTA = senko.Senko(
   user="Mafreke", # Required
@@ -12,13 +11,7 @@ OTA = senko.Senko(
   files = ["boot.py", "main.py"]
 )
 
-wlan = network.WLAN(network.STA_IF) # create station interface
-wlan.active(True)       # activate the interface
-wlan.scan()             # scan for access points
-while not wlan.isconnected():      # check if the station is connected to an AP
-    wlan.connect('WiFi-2.4-E1B3', 'Amortje2016') # connect to an AP
-wlan.config('mac')      # get the interface's MAC address
-print(wlan.ifconfig())
+connectwlan()
 
 if OTA.update():
     print("updated to the latest version! Rebooting...")
