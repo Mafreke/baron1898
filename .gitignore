@@ -139,6 +139,13 @@ dmypy.json
 # Ignore all local history of files
 .history
 src/connectwlan.py
+.micropy
+.vscode
+.pylintrc
+dev-requirements.txt
+micropy.json
+pymakr.conf
+requirements.txt
 
 # End of https://www.gitignore.io/api/python,visualstudiocode
 
