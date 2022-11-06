@@ -137,7 +137,7 @@ dmypy.json
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-src/connectwlan.py
+src/lib/connectwlan.py
 .micropy
 .vscode
 .pylintrc
