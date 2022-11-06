@@ -8,7 +8,7 @@ OTA = senko.Senko(
   repo="baron1898", # Required
   branch="master", # Optional: Defaults to "master"
   working_dir="src", # Optional: Defaults to "app"
-  files = ["main.py", "boot.py"]
+  files = ["main.py"]
 )
 
 connected = connectwlan()
