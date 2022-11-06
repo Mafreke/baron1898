@@ -10,7 +10,7 @@ OTA = senko.Senko(
   branch="master", # Optional: Defaults to "master"
   working_dir="src", # Optional: Defaults to "app"
   files = ["main.py"]
-}
+)
 
 connected = connectwlan()
 if connected:
