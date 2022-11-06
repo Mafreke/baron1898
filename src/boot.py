@@ -1,22 +1,21 @@
 import senko
-import machine
+from machine import Pin, I2C, reset
 import network
-from connectwlan import *
-
+from lib.connectwlan import *
 
 OTA = senko.Senko(
   user="Mafreke", # Required
   repo="baron1898", # Required
   branch="master", # Optional: Defaults to "master"
   working_dir="src", # Optional: Defaults to "app"
-  files = ["main.py"]
+  files = ["main.py", "boot.py"]
 )
 
 connected = connectwlan()
 if connected:
   if OTA.update():
     print("updated to the latest version! Rebooting...")
-    machine.reset()
+    reset()
   else:
     print("Version up to date!")
 else:
