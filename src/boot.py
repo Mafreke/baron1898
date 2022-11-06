@@ -1,8 +1,6 @@
 import senko
 import machine
 
-import connectwlan
-
 OTA = senko.Senko(
   user="Mafreke", # Required
   repo="baron1898", # Required
@@ -11,7 +9,7 @@ OTA = senko.Senko(
   files = ["boot.py", "main.py"]
 )
 
-connectwlan()
+import connectwlan
 
 if OTA.update():
     print("updated to the latest version! Rebooting...")
